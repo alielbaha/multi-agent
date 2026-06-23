@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.schemas.recommendation import RecommendationRequest
+
 app = FastAPI(title="multi agent system")
 
 
