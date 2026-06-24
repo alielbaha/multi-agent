@@ -1,8 +1,8 @@
-from typing import TypedDict Optional
+from typing import TypedDict, Optional
 
 
 class AgentState(TypedDict):
     ticker: str
-    fundamentals: Optional[dict]
-    fundamentals_summary: Optional[dict]
+    fundementals: Optional[dict]
+    fundementals_summary: Optional[dict]
 
