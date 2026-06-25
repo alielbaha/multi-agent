@@ -7,7 +7,8 @@ financial metrics for a stock, write a concise 3-4 sentence assessment of
 the company's financial health. Be specific about what the numbers indicate
 and avoid generic statements."""
 
-def fundamental_analyst_node(state:AgentState):
+
+def fundamental_analyst_node(state: AgentState):
     ticker = state["ticker"]
 
     fundamentals = get_fundamentals(ticker)

@@ -1,9 +1,9 @@
 from unittest.mock import patch
 from app.agents.fundamental_analyst import fundamental_analyst_node
 
+
 @patch("app.agents.fundamental_analyst.call_llm")
 @patch("app.agents.fundamental_analyst.get_fundamentals")
-
 def test_fundamental_analyst_node(mock_get_fundamentals, mock_call_llm):
     mock_get_fundamentals.return_value = {
         "pe_ratio": 25.0,
@@ -15,7 +15,7 @@ def test_fundamental_analyst_node(mock_get_fundamentals, mock_call_llm):
 
     mock_call_llm.return_value = "this company has pretty healthy margins"
 
-    state = {"ticker":"AAPL", "fundamentals":None, "fundamentals_summary":None}
+    state = {"ticker": "AAPL", "fundamentals": None, "fundamentals_summary": None}
 
     result = fundamental_analyst_node(state)
 
