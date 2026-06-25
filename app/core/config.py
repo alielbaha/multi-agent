@@ -2,9 +2,9 @@ from pydantic_settings import BaseSettings
 
 
 class Settings(BaseSettings):
-    openai_api_key = ""
-    anthropic_api_key = ""
-    market_data_api_key = ""
+    openai_api_key: str = ""
+    anthropic_api_key: str = ""
+    market_data_api_key: str = ""
 
     class Config:
         env_file = ".env"
