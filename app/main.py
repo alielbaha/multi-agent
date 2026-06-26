@@ -15,12 +15,9 @@ def recommend(request: RecommendationRequest):
     state = {
         "ticker": request.ticker,
         "fundamentals": None,
-        "fundamentals_summary": None, 
-        }
-    
+        "fundamentals_summary": None,
+    }
+
     state = fundamentals_analyst_node(state)
 
     return state
-
-
-
