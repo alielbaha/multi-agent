@@ -8,7 +8,7 @@ the company's financial health. Be specific about what the numbers indicate
 and avoid generic statements."""
 
 
-def fundamental_analyst_node(state: AgentState):
+def fundamentals_analyst_node(state: AgentState):
     ticker = state["ticker"]
 
     fundamentals = get_fundamentals(ticker)
