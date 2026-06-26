@@ -6,7 +6,7 @@ def get_fundamentals(ticker: str):
     info = stock.info
 
     return {
-        "pre_ratio": info.get("trailingPE"),
+        "pe_ratio": info.get("trailingPE"),
         "market_cap": info.get("marketCap"),
         "revenue_growth": info.get("revenueGrowth"),
         "profit_margins": info.get("profitMargins"),

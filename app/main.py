@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from app.schemas.recommendation import RecommendationRequest
+from app.agents.fundamental_analyst import fundamental_analyst_node
 
 app = FastAPI(title="multi agent system")
 
@@ -10,8 +11,16 @@ def health():
 
 
 @app.post("/recommend")
-def recommand(request: RecommendationRequest):
-    return {
+def recommend(request: RecommendationRequest):
+    state = {
         "ticker": request.ticker,
-        "signal": "BUY",
-    }
+        "fundamentals": None,
+        "fundamentals_summary": None, 
+        }
+    
+    state = fundamentals_analyst_node(state)
+
+    return state
+
+
+
