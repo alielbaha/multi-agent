@@ -1,3 +1,7 @@
+import os
+
+os.environ["GROQ_API_KEY"] = "test_key"
+
 from unittest.mock import patch
 from app.agents.fundamentals_analyst import fundamentals_analyst_node
 
