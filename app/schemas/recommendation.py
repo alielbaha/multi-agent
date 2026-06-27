@@ -1,5 +1,5 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class RecommendationRequest(BaseModel):
-    ticker: str
+    ticker: Field(..., min_length=1, examples ="AAPL")
