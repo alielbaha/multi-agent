@@ -1,13 +1,12 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
 class Settings(BaseSettings):
-    openai_api_key: str = ""
-    anthropic_api_key: str = ""
-    market_data_api_key: str = ""
 
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(env_file=".env")
+
+    groq_api_key: str = ""
+    market_data_api_key: str = ""
 
 
 settings = Settings()
