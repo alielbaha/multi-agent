@@ -8,6 +8,7 @@ overall sentiment and any notable themes. Be specific about what the
 headlines suggest and avoid generic statements. If no headlines are
 available, say so plainly."""
 
+
 def news_analyst_node(state: AgentState):
     ticker = state["ticker"]
 
