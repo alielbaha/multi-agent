@@ -17,6 +17,6 @@ def news_analyst_node(state: AgentState):
     user_prompt = f"Ticker: {ticker}\nHeadlines:\n{headlines}"
 
     news_summary = call_llm(SYSTEM_PROMPT, user_prompt)
-    #state["news"] = news
-    #state["news_summary"] = news_summary
+    # state["news"] = news
+    # state["news_summary"] = news_summary
     return {"news": news, "news_summary": news_summary}

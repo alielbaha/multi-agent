@@ -16,7 +16,7 @@ def fundamentals_analyst_node(state: AgentState):
     user_prompt = f"Ticker:{ticker} \nMetrics:{fundamentals}"
     summary = call_llm(SYSTEM_PROMPT, user_prompt)
 
-    #state["fundamentals"] = fundamentals
-    #state["fundamentals_summary"] = summary
+    # state["fundamentals"] = fundamentals
+    # state["fundamentals_summary"] = summary
 
-    return {"fundamentals": fundamentals, "fundamentals_summary":summary}
+    return {"fundamentals": fundamentals, "fundamentals_summary": summary}
