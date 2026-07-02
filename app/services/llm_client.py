@@ -4,7 +4,7 @@ from groq import Groq
 client = Groq(api_key=settings.groq_api_key)
 
 
-def call_llm(system_prompt: str, user_prompt: str, model: str = "llama-3.1-8b-instant"):
+def call_llm(system_prompt: str, user_prompt: str, model: str = "openai/gpt-oss-120b"):
     response = client.chat.completions.create(
         model=model,
         max_tokens=500,
