@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 from app.schemas.recommendation import RecommendationRequest
+
 # from app.agents.fundamentals_analyst import fundamentals_analyst_node
-from app.graph.pipeline import graph 
+from app.graph.pipeline import graph
 
 app = FastAPI(title="multi agent system")
 
