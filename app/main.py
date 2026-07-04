@@ -20,6 +20,7 @@ def recommend(request: RecommendationRequest):
         "fundamentals_summary": None,
         "news": None,
         "news_summary": None,
+        "recommendation": None,
     }
 
     state = graph.invoke(initial_state)

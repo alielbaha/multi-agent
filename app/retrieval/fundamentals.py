@@ -12,6 +12,3 @@ def get_fundamentals(ticker: str):
         "profit_margins": info.get("profitMargins"),
         "debt_to_equity": info.get("debtToEquity"),
     }
-
-
-print(get_fundamentals("AAPL"))
