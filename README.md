@@ -9,9 +9,10 @@ A high-performance, multi-agent AI system for real-time stock analysis. Combines
 
 ## Features
 
-- **Parallel Execution:** Simultaneous fundamental and news analysis via LangGraph's fan-out/fan-in pattern.
+- **Parallel Execution:** Simultaneous fundamental and news analysis via LangGraph's fan-out pattern.
+- **Intelligent Synthesis:** A dedicated Synthesizer Agent waits for parallel analyses to complete, combining them into a concise final investment recommendation (bullish, bearish, or neutral).
 - **Real-Time Data:** Live stock metrics and headlines fetched via `yfinance`.
-- **LLM-Powered:** AI-generated analytical summaries using the Groq API.
+- **LLM-Powered:** AI-generated analytical summaries and final recommendations using the Groq API.
 - **Production-Ready:** FastAPI backend with Pydantic validation, Docker support, and automated CI/CD.
 
 ## Quick Start
@@ -55,7 +56,8 @@ curl -X POST http://localhost:8000/recommend \
 3. **Specialized Agents:**
    - `fundamentals_analyst`: Fetches PE, market cap, margins, etc., and summarizes financial health.
    - `news_analyst`: Fetches recent headlines and summarizes market sentiment.
-4. **State Merge:** Both agents converge at the `END` node, merging their outputs into a unified response.
+4. **Synthesizer Agent:** Executes after the parallel agents finish (fan-in), reading their summaries from the state to generate a final 3-4 sentence investment recommendation.
+5. **Final Output:** The synthesized recommendation is added to the state, and the graph reaches the `END` node, returning the unified JSON response to the client.
 
 ## Development & Testing
 
