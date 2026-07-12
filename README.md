@@ -17,6 +17,9 @@ A multi-agent AI system for real-time stock analysis. A fundamentals analyst and
 - **Streaming Support:** Watch the debate unfold live via a Server-Sent Events endpoint, or get the full result in one call.
 - **Production-Ready:** FastAPI backend with Pydantic validation, Docker support, and automated CI/CD (`ruff` + `black`).
 
+![Project Screenshot](images/screen1.png)
+![Project Screenshot](images/screen2.png)
+
 ## Quick Start
 
 ### 1. Installation
