@@ -9,12 +9,14 @@ Your response must follow this exact format:
 VERDICT: [BUY / HOLD / SELL]
 RATIONALE: [3 to 4 sentences referencing specific arguments made during the debate] """
 
-def judge_analyst_node(state:AgentState):
+
+def judge_analyst_node(state: AgentState):
     ticker = state["ticker"]
     history = state["debate_history"]
     user_prompt = f"Ticker: {ticker}\nFull debate:\n" + "\n\n".join(
         f"Round: {msg["round_number"]}\n\nRole: {msg["role"]}\n\n{msg["content"]}"
-        for msg in history )
+        for msg in history
+    )
     response = call_llm(SYSTEM_PROMPT, user_prompt)
-    
+
     return {"verdict": response}
