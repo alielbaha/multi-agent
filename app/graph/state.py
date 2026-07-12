@@ -8,3 +8,6 @@ class AgentState(TypedDict):
     news: list
     news_summary: str
     recommendation: str
+    round_number: int
+    debate_history: list # [{"role": "bull/bear", "content": ".."}]
+    verdict: str
