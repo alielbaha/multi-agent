@@ -1,6 +1,9 @@
 from unittest.mock import patch
 from fastapi.testclient import TestClient
 from app.main import app
+import os
+
+os.environ.setdefault("GROQ_API_KEY", "test-key")
 
 client = TestClient(app)
 
@@ -11,13 +14,13 @@ def test_health():
     assert response.json() == {"status": "fine"}
 
 
-@patch("app.judge.call_llm")
-@patch("app.bear_analyst.call_llm")
-@patch("app.bull_analyst.call_llm")
-@patch("app.news_analyst.call_llm")
-@patch("app.news_analyst.get_news")
-@patch("app.fundamental_analyst.call_llm")
-@patch("app.fundamental_analyst.get_fundamentals")
+@patch("app.agents.judge.call_llm")
+@patch("app.agents.bear_analyst.call_llm")
+@patch("app.agents.bull_analyst.call_llm")
+@patch("app.agents.news_analyst.call_llm")
+@patch("app.agents.news_analyst.get_news")
+@patch("app.agents.fundamentals_analyst.call_llm")
+@patch("app.agents.fundamentals_analyst.get_fundamentals")
 def test_recommend_end_to_end(
     mock_get_fundamentals,
     mock_call_llm_fundamentals,
