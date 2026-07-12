@@ -12,5 +12,6 @@ def call_llm(system_prompt: str, user_prompt: str, model: str = "openai/gpt-oss-
             {"role": "system", "content": system_prompt},
             {"role": "user", "content": user_prompt},
         ],
+        reasoning_effort="low",
     )
     return response.choices[0].message.content
