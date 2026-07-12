@@ -5,7 +5,10 @@ on:
     branch : [main]
   pull_request : 
     branch : [main]
-  
+
+env:
+  GROQ_API_KEY: test-key
+
 jobs:
   test:
     runs-on: ubuntu-latest
