@@ -18,7 +18,6 @@ Never restate a claim you already made in an earlier round in substantially the 
 Be sharp, specific, and cite numbers. Keep your response to 3-4 sentences."""
 
 
-
 def bull_analyst_node(state: AgentState):
     ticker = state["ticker"]
     fundamentals_summary = state["fundamentals_summary"]

@@ -17,6 +17,7 @@ Never restate a claim you already made in an earlier round in substantially the 
 
 Be sharp, specific, and cite numbers. Keep your response to 3-4 sentences."""
 
+
 def bear_analyst_node(state: AgentState):
     fundamentals_summary = state["fundamentals_summary"]
     news_summary = state["news_summary"]
